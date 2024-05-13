@@ -4,7 +4,7 @@ import pandas as pd
 from src.exception import CustomException
 from src.utils import load_object
 from src.logger import logging
-from utils import create_features
+from src.utils import create_features
 
 class PredictPipeline:
     def __init__(self):
@@ -37,9 +37,12 @@ class CustomData:
         passenger_count: int,
         trip_distance:float,
         RatecodeID: int,
+        payment_type: int,
         PULocationID: int,
         DOLocationID:int,
-        payment_type: int):
+        store_and_fwd_flag:str
+        ):
+        
 
         self.VendorID = VendorID
 
@@ -58,6 +61,8 @@ class CustomData:
         self.PULocationID = PULocationID
 
         self.DOLocationID = DOLocationID
+
+        self.store_and_fwd_flag = store_and_fwd_flag
     
     
     #Function to return the input as Dataframe
@@ -70,16 +75,21 @@ class CustomData:
                 "passenger_count": [self.passenger_count],
                 "trip_distance": [self.trip_distance],
                 "RatecodeID": [self.RatecodeID],
-                "payment_type": [self.payment_type],
+                "store_and_fwd_flag": [self.store_and_fwd_flag],
                 "PULocationID": [self.PULocationID],
                 "DOLocationID": [self.DOLocationID],
+                "payment_type": [self.payment_type],
+                
 
             }
             logging.info("Loaded the prediction features as a Dataframe")
             df = pd.DataFrame(custom_data_input_dict)
             
-            #create new features
+            logging.info("Creating new features")
             df1 = create_features(df)
+
+            logging.info("Dropping unused columns/features")
+            df1.drop(['tpep_pickup_datetime','tpep_dropoff_datetime'],axis=1,inplace=True)
             return df1
 
         except Exception as e:

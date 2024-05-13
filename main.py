@@ -39,4 +39,4 @@ def model_train():
         raise CustomException(e,sys)
 
 if __name__=="__main__":
-    model_train()
+    prep_data()

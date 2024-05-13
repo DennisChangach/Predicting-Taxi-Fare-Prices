@@ -6,6 +6,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.utils import create_features
+
 @dataclass
 class DataPreparationConfig:
     #path for data preparation component
@@ -25,26 +27,9 @@ class DataPreparation:
             #logging this in the logfiles
             logging.info("Read the dataset as a dataframe")
 
-            dataset = df.copy()
-            logging.info("Converting the date columns to datatime format")
-            #Converting to datetime
-            dataset["tpep_pickup_datetime"] = pd.to_datetime(dataset["tpep_pickup_datetime"])
-            dataset["tpep_dropoff_datetime"] = pd.to_datetime(dataset["tpep_dropoff_datetime"])
-
-            logging.info("Creating Trip Duration Column")
-            #calculating trip duration(in minutes) using pickup & dropoff times
-            dataset['trip_duration'] = (dataset["tpep_dropoff_datetime"] - dataset["tpep_pickup_datetime"]).dt.total_seconds() / 60
-
-            logging.info("Creating Time Variables")
-            #Creating the time variables
-            dataset['pickup_day_no']=dataset['tpep_pickup_datetime'].dt.weekday
-            dataset['dropoff_day_no']=dataset['tpep_dropoff_datetime'].dt.weekday
-            dataset['pickup_hour']=dataset['tpep_pickup_datetime'].dt.hour
-            dataset['dropoff_hour']=dataset['tpep_dropoff_datetime'].dt.hour
-            dataset['pickup_month']=dataset['tpep_pickup_datetime'].dt.month
-            dataset['dropoff_month']=dataset['tpep_dropoff_datetime'].dt.month
-            dataset['pickup_year']=dataset['tpep_pickup_datetime'].dt.year
-            dataset['dropoff_year']=dataset['tpep_dropoff_datetime'].dt.year
+            logging.info("Creating new features")
+            dataset = create_features(df)
+       
 
             logging.info("Filtering dataframe to remove records")
             #removing records where trip duration, trip distance and total fare amount are recorded as 0

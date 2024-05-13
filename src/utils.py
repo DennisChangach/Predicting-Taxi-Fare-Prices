@@ -27,7 +27,7 @@ def save_object(file_path,obj):
 
 #Function to create objects
 def create_features(dataset):
-    logging.info("Converting the date columns to datatime format")
+    logging.info("Converting the date columns to datetime format")
     #Converting to datetime
     dataset["tpep_pickup_datetime"] = pd.to_datetime(dataset["tpep_pickup_datetime"])
     dataset["tpep_dropoff_datetime"] = pd.to_datetime(dataset["tpep_dropoff_datetime"])
