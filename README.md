@@ -7,6 +7,8 @@ This repository implements a machine learning pipeline for predicting taxi fares
 - Data Pipelines: Components are chained together using pipelines for efficient data processing workflows.
 - Taxi Fare Prediction: Predicts taxi fares based on historical data.
 
+[Streamlit App](/src/artifacts/images/streamlit_app.jpg)
+
 ## Getting Started
 
 - Prerequisites: Python (version 3.10 or above), libraries from requirements.txt
@@ -36,4 +38,4 @@ Modify the existing modules or create new ones to customize the pipeline for dif
 Experiment with different machine learning models for taxi fare prediction.
 
 Resources:
-- Medium Article
+- [Medium Article]()
