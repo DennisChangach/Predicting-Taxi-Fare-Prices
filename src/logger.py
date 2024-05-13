@@ -1,4 +1,3 @@
-#Logging all the information that occurs
 import logging
 import os
 from datetime import datetime

@@ -7,7 +7,7 @@ from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
 
 def main():
-    st.set_page_config(page_title = "Caantin AI",page_icon = "🚖",
+    st.set_page_config(page_title = "Predict Fare",page_icon = "🚖",
                        initial_sidebar_state = 'expanded')
                    
     st.title("NYC Yellow Taxi Trip 🚖")

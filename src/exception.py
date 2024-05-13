@@ -1,4 +1,3 @@
-# Exception Error Handling
 import sys
 import logging
 from src.logger import logging
