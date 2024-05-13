@@ -26,4 +26,4 @@ Here's the project Structure
 
 
 Resources:
-- Medium Article
+- [Medium Article](https://bit.ly/3QLKdoS)
