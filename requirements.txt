@@ -10,4 +10,5 @@ xgboost
 Flask
 dill
 streamlit
+shap
 #-e .
