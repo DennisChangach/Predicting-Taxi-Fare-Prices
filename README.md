@@ -20,20 +20,42 @@ This repository implements a machine learning pipeline for predicting taxi fares
 
 ## Project Structure:
 
-data: Contains sample taxi fare data (replace with your data if applicable).
-src:
-components: Python modules for each processing step.
-data_ingestion.py
-data_preparation.py
-data_transformation.py
-model_training.py
-utils.py (utility functions)
-main.py: Script to run the data processing pipeline and model training.
-requirements.txt: Lists required Python libraries.
-Further Exploration:
+predicting_taxi_fare_prices/
+│
+├── artifacts/
+│   ├── Images/
+│   ├── data.csv
+│   ├── train.csv
+│   ├── test.csv
+│   ├── preprocessor.pkl
+│   └── model.pkl
+├── logs/
+├── research/
+│   └── Notebooks/
+├── src/
+│   ├── Components/
+│   │   ├── __init__.py
+│   │   ├── data_ingestion.py
+│   │   ├── data_preparation.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   ├── Pipeline/
+│   │   ├── __init__.py
+│   │   ├── ingest_pipeline.py
+│   │   ├── predict_pipeline.py
+│   │   └── train_pipeline.py
+│   ├── exception.py
+│   ├── logger.py
+│   ├── utils.py
+│   └── __init__.py
+├── app.py
+├── main.py
+├── README.md
+├── Requirements.txt
+└── setup.py
 
-Modify the existing modules or create new ones to customize the pipeline for different tasks.
-Experiment with different machine learning models for taxi fare prediction.
 
-Resources:
+
+### Resources:
 - Medium Article
+
