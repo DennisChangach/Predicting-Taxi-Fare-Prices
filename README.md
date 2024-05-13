@@ -21,40 +21,8 @@ This repository implements a machine learning pipeline for predicting taxi fares
 - Run the pipeline: Execute the script main.py to run the entire data processing and model training pipeline.
 
 ## Project Structure:
-
-predicting_taxi_fare_prices/
-│
-├── artifacts/
-│   ├── Images/
-│   ├── data.csv
-│   ├── train.csv
-│   ├── test.csv
-│   ├── preprocessor.pkl
-│   └── model.pkl
-├── logs/
-├── research/
-│   └── Notebooks/
-├── src/
-│   ├── Components/
-│   │   ├── __init__.py
-│   │   ├── data_ingestion.py
-│   │   ├── data_preparation.py
-│   │   ├── data_transformation.py
-│   │   └── model_trainer.py
-│   ├── Pipeline/
-│   │   ├── __init__.py
-│   │   ├── ingest_pipeline.py
-│   │   ├── predict_pipeline.py
-│   │   └── train_pipeline.py
-│   ├── exception.py
-│   ├── logger.py
-│   ├── utils.py
-│   └── __init__.py
-├── app.py
-├── main.py
-├── README.md
-├── Requirements.txt
-└── setup.py
+Here's the project Structure
+![Project Structure](artifacts/images/project_structure.jpg)
 
 
 Resources:
