@@ -21,6 +21,8 @@ This repository implements a machine learning pipeline for predicting taxi fares
 - Run the pipeline: Execute the script main.py to run the entire data processing and model training pipeline.
 
 ## Project Structure:
+Here's the project Structure
+![Project Structure](artifacts/images/project_structure.jpg)
 
 
 Resources:
